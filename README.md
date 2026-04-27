@@ -1,136 +1,119 @@
-# J.A.R.V.I.S — AI Desktop Assistant
-### Just A Rather Very Intelligent System
+🤖 J.A.R.V.I.S — AI Desktop Assistant
+Just A Rather Very Intelligent System
 
-A full Python desktop AI assistant with a futuristic JARVIS-style interface,
-built with PyQt6 + Groq AI (free LLaMA 70B).
+A futuristic desktop AI assistant built with Python + PyQt6 and powered by Groq (LLaMA 3.3 70B).
 
----
+Designed to behave like a real intelligent system with voice control, system automation, terminal access, and live system monitoring.
 
-## Quick Start (Linux Mint)
-
-### 1. Install dependencies
-```bash
+⚡ Quick Start (Linux Mint)
+1. Install dependencies
 bash install.sh
-```
-
-### 2. Get a FREE Groq API key
-- Go to: https://console.groq.com
-- Sign up (free)
-- Click "API Keys" → "Create API Key"
-- Copy the key (starts with `gsk_...`)
-
-### 3. Run JARVIS
-```bash
+2. Get a FREE Groq API Key
+Visit: https://console.groq.com
+Sign up (no credit card required)
+Go to API Keys
+Click Create API Key
+Copy key (starts with gsk_...)
+3. Run JARVIS
 python3 main.py
-```
+4. Connect AI
+Paste your Groq API key in the top input field
+Click CONNECT AI
+Start interacting with JARVIS 🤖
+✨ Features
+🧠 AI Brain
+Powered by Groq + LLaMA 3.3 70B (free tier)
+Context-aware conversations (memory of last 20 messages)
+Personalized behavior (knows user environment)
+🎤 Voice System
+Voice input via microphone 🎤
+Text-to-Speech (AI reads responses aloud)
+Toggle TTS on/off anytime
+Requires Chromium/Chrome for speech recognition
+🖥️ System Control
 
-### 4. Connect AI
-- Paste your Groq API key in the header field
-- Click "CONNECT AI"
-- Start talking or typing!
+Direct command execution (no AI needed):
 
----
-
-## Features
-
-### AI Brain
-- Groq API with LLaMA 3.3 70B (free tier)
-- Natural conversation memory (20 messages)
-- Context-aware: knows you're Omar on Linux Mint
-
-### Voice
-- **Voice Input**: Click 🎤 and speak (Chrome/Chromium needed for STT)
-- **TTS Output**: Every AI response is read aloud
-- Toggle TTS on/off with the TTS button
-
-### System Control
-- **Direct commands** (no AI needed):
-  - `open firefox` → opens Firefox
-  - `open terminal` → opens terminal
-  - `volume 50` → sets volume to 50%
-  - `mute` → toggles mute
-  - `search linux tips` → Google search
-- **App Launcher** panel on the right
-
-### Terminal Tab
-- Built-in terminal inside the app
-- Run any shell command
-- See output live
-
-### System Stats
-- CPU, RAM, Disk, Temperature — live every 3 seconds
-- Weather for Casablanca (live)
-- Volume slider
-
-### Notes
-- Save quick notes that persist across sessions
-- Stored in `~/.jarvis_notes.json`
-
-### File Tools
-- Open any file and read its contents to AI
-- Save conversation history as JSON
-
----
-
-## Project Structure
-
-```
+open firefox
+open terminal
+volume 50
+mute
+search linux tips
+Instant system response
+App launcher panel included
+💻 Built-in Terminal
+Full terminal embedded inside UI
+Run shell commands directly
+Live output streaming
+📊 System Monitor
+CPU usage (live)
+RAM usage (live)
+Disk usage
+Temperature monitoring
+Updates every 3 seconds
+🌤️ Live Data
+Weather tracking (Casablanca)
+System volume control slider
+📝 Notes System
+Save quick notes inside the app
+Persistent storage across sessions
+Stored locally in:
+~/.jarvis_notes.json
+📁 File Tools
+Open files and analyze content with AI
+Supports reading and interpretation
+Save chat history as JSON
+🧩 Project Structure
 jarvis/
-├── main.py                 # Entry point
-├── requirements.txt        # Python packages
-├── install.sh              # Auto-installer
+├── main.py                  # Application entry point
+├── requirements.txt         # Dependencies
+├── install.sh               # Auto setup script
+│
 ├── core/
-│   ├── ai_brain.py         # Groq AI communication
-│   ├── system_controller.py# OS control (apps, volume, files)
-│   ├── voice_engine.py     # TTS + STT
-│   └── workers.py          # Background threads (stats, weather)
+│   ├── ai_brain.py          # Groq AI communication layer
+│   ├── system_controller.py # OS control (apps, volume, files)
+│   ├── voice_engine.py      # TTS + Speech recognition
+│   └── workers.py           # Background tasks (stats, weather)
+│
 └── gui/
-    ├── main_window.py      # Main PyQt6 window
-    └── widgets.py          # Custom widgets (orb, bars, bubbles)
-```
-
----
-
-## Requirements
-
-- Python 3.9+
-- Linux Mint (or any Ubuntu-based distro)
-- Internet connection (for AI + weather)
-- Microphone (optional, for voice input)
-
----
-
-## Troubleshooting
-
-**PyQt6 not found:**
-```bash
+    ├── main_window.py       # PyQt6 main interface
+    └── widgets.py           # Custom UI components
+📦 Requirements
+Python 3.9+
+Linux Mint / Ubuntu-based distro
+Internet connection (AI + weather)
+Microphone (optional but recommended)
+🛠️ Troubleshooting
+❌ PyQt6 missing
 pip3 install --break-system-packages PyQt6
-```
-
-**PyAudio install fails:**
-```bash
+❌ PyAudio installation error
 sudo apt install portaudio19-dev python3-dev
 pip3 install --break-system-packages pyaudio
-```
-
-**TTS not working:**
-```bash
+❌ Text-to-Speech not working
 sudo apt install espeak espeak-ng
 pip3 install --break-system-packages pyttsx3
-```
+🎤 Voice input not working
+Check microphone connection
+Verify devices:
+arecord -l
+🔑 Groq API Setup (Free Tier)
+Go to https://console.groq.com
+Create account
+Open API Keys
+Generate new key
+Paste inside JARVIS UI
+Free Tier Includes:
+~14,400 requests/day
+LLaMA 3.3 70B access
+No credit card required
+⚡ Final Vision
 
-**Voice input not working:**
-- Make sure your microphone is connected
-- Check: `arecord -l` to list audio devices
+J.A.R.V.I.S is designed to be more than an assistant —
+it is a full desktop intelligence layer:
 
----
+Voice-controlled
+System-aware
+AI-powered
+Fully interactive
 
-## Get Groq API Key (Free)
-
-1. Go to https://console.groq.com
-2. Sign up with Google or email
-3. Click **API Keys** in sidebar
-4. Click **Create API Key**
-5. Copy the key → paste in JARVIS header
-
-Free tier: ~14,400 requests/day with LLaMA 70B ✅
+A step toward a real “Iron Man-style” operating system.
